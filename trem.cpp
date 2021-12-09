@@ -2,10 +2,11 @@
 #include <QtCore>
 
 //Construtor
-Trem::Trem(int ID, int x, int y){
+Trem::Trem(int ID, int x, int y, int canMove){
     this->ID = ID;
     this->x = x;
     this->y = y;
+    this->canMove = canMove;
     velocidade = 100;
 }
 

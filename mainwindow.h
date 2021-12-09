@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include "trem.h"
+#include <QMutex>
+
+#define TRAIN_CAN_MOVE 1 // indica que o trem pode se mover
+#define TRAIN_CANNOT_MOVE 0 // indica que o trem não pode se mover
 
 namespace Ui {
 class MainWindow;
@@ -19,7 +23,9 @@ public:
 
 public slots:
     void updateInterface(int,int,int);
-    void iniciarTrens();
+    void startTrains();
+    void checkFirstTrainCanMove(int x, int y);
+    void checkSecondTrainCanMove(int x, int y);
 
 private:
     Ui::MainWindow *ui;
@@ -30,6 +36,9 @@ private:
     Trem *trem3;
     Trem *trem4;
     Trem *trem5;
+
+    //Cria os semáforo
+    QMutex firstCriticalRegion;
 };
 
 #endif // MAINWINDOW_H

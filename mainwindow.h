@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "trem.h"
-#include <QMutex>
+#include <QSemaphore>
 
 #define TRAIN_CAN_MOVE 1 // indica que o trem pode se mover
 #define TRAIN_CANNOT_MOVE 0 // indica que o trem não pode se mover
@@ -26,6 +26,9 @@ public slots:
     void startTrains();
     void checkFirstTrainCanMove(int x, int y);
     void checkSecondTrainCanMove(int x, int y);
+    void checkThirdTrainCanMove(int x, int y);
+    void checkFourthTrainCanMove(int x, int y);
+    void checkFifthTrainCanMove(int x, int y);
 
 private:
     Ui::MainWindow *ui;
@@ -37,8 +40,14 @@ private:
     Trem *trem4;
     Trem *trem5;
 
-    //Cria os semáforo
-    QMutex firstCriticalRegion;
+    //Cria os semáforos
+    QSemaphore firstCriticalRegion;
+    QSemaphore secondCriticalRegion;
+    QSemaphore thirdCriticalRegion;
+    QSemaphore fourthCriticalRegion;
+    QSemaphore fifthCriticalRegion;
+    QSemaphore sixthCriticalRegion;
+    QSemaphore seventhCriticalRegion;
 };
 
 #endif // MAINWINDOW_H

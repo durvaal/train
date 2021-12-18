@@ -30,6 +30,17 @@ public slots:
     void checkFourthTrainCanMove(int x, int y);
     void checkFifthTrainCanMove(int x, int y);
 
+private slots:
+    void on_controllerTrainOne_valueChanged(int value);
+
+    void on_controllerTrainTwo_valueChanged(int value);
+
+    void on_controllerTrainThree_valueChanged(int value);
+
+    void on_controllerTrainFour_valueChanged(int value);
+
+    void on_controllerTrainFive_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
 

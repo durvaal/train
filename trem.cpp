@@ -2,12 +2,12 @@
 #include <QtCore>
 
 //Construtor
-Trem::Trem(int ID, int x, int y, int canMove){
+Trem::Trem(int ID, int x, int y, int canMove, int velocidade){
     this->ID = ID;
     this->x = x;
     this->y = y;
     this->canMove = canMove;
-    velocidade = 100;
+    this->velocidade = velocidade;
 }
 
 //Função a ser executada após executar trem->START
@@ -72,6 +72,7 @@ void Trem::run(){
         default:
             break;
         }
+
         msleep(velocidade);
     }
 }

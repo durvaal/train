@@ -13,13 +13,16 @@
 class Trem: public QThread{
  Q_OBJECT
 public:
-    Trem(int,int,int,int);  //construtor
+    Trem(int,int,int,int,int);  //construtor
     void run();         //função a ser executada pela thread
     void setX(int x) {
         this->x = x;
     }
     void setY(int y) {
         this->y = y;
+    }
+    void changeVelocity(int velocidade) {
+        this->velocidade = velocidade;
     }
     void setCanMove(int canMove) {
         this->canMove = canMove;
